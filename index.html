@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>mHealthDroid by mHealthDroid</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>mHealthDroid</h1>
+        <h2>A biomedical mobile framework for rapid development of mHealth applications in Android</h2>
+        <a href="https://github.com/mHealthDroid" class="button"><small>Follow me on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <p><img src="http://apuestasrafag.files.wordpress.com/2014/03/fotologo2.png?w=712" height="225"></p>
+
+<h2>
+<a name="what-is-mhealthdroid" class="anchor" href="#what-is-mhealthdroid"><span class="octicon octicon-link"></span></a>What is mHealthDroid?</h2>
+
+<p>mHealhDroid is an open-source mobile framework designed to facilitate the rapid and easy development of mHealth and biomedical applications. The framework is devised to leverage the potential of mobile devices such as smartphones or tablets, wearable sensors and portable biomedical devices. These systems are used increasingly for the monitoring and delivery of personal health care and wellbeing. Likewise, mHealthDroid aims at bringing together heterogeneous multimodal sensors including both research and commercial systems. </p>
+
+<p>The framework comprises an extensive set of modules for sensor data acquisition, data management, remote storage, signal processing, machine learning, multidimensional data visualization, as well as intelligent recommendations and multimedia guidelines among others features. The core of the framework is defined to operate on the Android operating system; however, it has been implemented in a way that allows its use with any portable device. In fact, the core modules and components are defined to be completely independent of the underlying sensing and communication technology. To utilize a new device (commercial or not) it is only required to include the corresponding drivers that allow the communication between the mHealthDroid modules and the specific device (transparent to the user anyhow). The mHealthDroid initiative already includes drivers for a wide sort of portable devices; nevertheless it aims at incorporating new systems to the current portfolio of supported devices. </p>
+
+<p>This active platform is in continuous development, thereby contributions are very welcome. Suggestions and comments are also appreciated!</p>
+
+<p>Contact (general info): <a href="mailto:mhealthdroid@gmail.com">mhealthdroid@gmail.com</a></p>
+
+<p>Contact (R&amp;D enquiries): <a href="mailto:oresti.bl@gmail.com">oresti.bl@gmail.com</a> [<a href="http://www.ugr.es/~oresti/">Oresti Baños</a>]</p>
+
+<p>Contact (implementation enquiries): <a href="mailto:rafagarfer@gmail.com">rafagarfer@gmail.com</a> [Rafael García], <a href="mailto:alejandrosaez3@gmail.com">alejandrosaez3@gmail.com</a> [Alejandro Sáez] </p>
+
+<p><strong>Table of Contents</strong></p>
+
+<ul>
+<li><a href="#what-is-mhealthdroid">What is mHealthDroid?</a></li>
+<li><a href="#features-what-does-mhealthdroid-offer-me">Features. What does mHealthDroid offer me?</a></li>
+<li><a href="#installation-instructions">Installation instructions</a></li>
+<li><a href="#mhealthdroid-structure">mHealthDroid structure</a></li>
+<li><a href="#full-documentation">Full documentation</a></li>
+<li><a href="#app-examples">APP examples</a></li>
+<li><a href="#examples-how-to-use-mhealthdroid">How to use mHealthDroid</a></li>
+<li><a href="#contribution-guidelines">Contribution guidelines</a></li>
+<li><a href="#community">Community</a></li>
+<li><a href="#team-members">Team Members</a></li>
+<li><a href="#where-can-i-get-help">Where can I get help?</a></li>
+<li><a href="#inspiration">Inspiration</a></li>
+<li><a href="#copyright-and-license">Copyright and license</a></li>
+</ul><h2>
+<a name="features-what-does-mhealthdroid-offer-me" class="anchor" href="#features-what-does-mhealthdroid-offer-me"><span class="octicon octicon-link"></span></a>Features. What does mHealthDroid offer me?</h2>
+
+<ul>
+<li><p>Rapid development of medical, health and wellbeing applications.</p></li>
+<li><p>Fast and efficient communication between portable biomedical devices and portable mobile devices to gather human-centered physiological and kinematic data. Up to now, SHIMMER biomedical devices and mobile sensors can be used as portable biomedical devices.</p></li>
+<li><p>Development of applications capable of working with different portable health devices simultaneously.</p></li>
+<li><p>Efficient data transfer across the framework's managers.</p></li>
+<li><p>Fast data storage (either local or remote).</p></li>
+<li><p>Visualization of any multimodal data streams such as patient's vital signs or kinematic data (either online or offine).</p></li>
+<li><p>Knowledge inference by using machine learning and pattern recognition models.</p></li>
+<li><p>Multimedia guidelines and recommenders, supported through audio, video and YouTube playlists, as well as notification procedures.</p></li>
+<li><p>System control and configuration tools to manage WiFi, 3G, Bluetooth, screen brightness, phone calls or text messages.</p></li>
+<li><p>User logging and data privacy mechanisms</p></li>
+</ul><h2>
+<a name="installation-instructions" class="anchor" href="#installation-instructions"><span class="octicon octicon-link"></span></a>Installation instructions</h2>
+
+<p>A few steps are required to get started:</p>
+
+<ol>
+<li><p>Download the project source files.</p></li>
+<li><p>Import the project to Eclipse or other IDE.    </p></li>
+<li>
+<p>Add the following libraries:</p>
+
+<ul>
+<li>GraphView 3.0.jar</li>
+<li>Guava 14.0.jar</li>
+<li>Shimmer.jar</li>
+<li>WekaSTRIPPED.jar</li>
+<li>YouTubeAndroidPlayerApi.jar</li>
+</ul>
+</li>
+</ol><ol>
+<li><p>Select mHealthDroid as library project.</p></li>
+<li><p>Create your new project and select mHealthDroid as library. </p></li>
+<li><p>Coding time!</p></li>
+</ol><p>All the libraries can be downloaded from mHealthDroid´s releases.</p>
+
+<p><a href="https://github.com/mHealthDroid/mHealthDroid/releases">https://github.com/mHealthDroid/mHealthDroid/releases</a></p>
+
+<h2>
+<a name="mhealthdroid-structure" class="anchor" href="#mhealthdroid-structure"><span class="octicon octicon-link"></span></a>mHealthDroid structure</h2>
+
+<p><img src="http://apuestasrafag.files.wordpress.com/2014/03/frameworkdiagram.png?w=800"></p>
+
+<p>The figure above depicts the structure of the framework, including all the existing managers and how they interact with each other. All these managers are of "singleton" kind, which means that only one unique instance can exist for each class and this instance is available from every component of the framework. In the following we provide a brief description of each manager. </p>
+
+<ul>
+<li>
+<strong>Communication Manager</strong>: it is responsible for the connection of mobile devices (smartphone, tablet) and biomedical devices, vital data gathering, local data storage and serve the collected data to the rest of the framework components.</li>
+<li>
+<strong>Remote Storage Manager</strong>: it is devised to upload the data avalaible in the local database to a remote storage. Although the framework only comprises the client side of the communication, we provide along with the framework a possible implementation for the server side.</li>
+<li>
+<strong>Visualization Manager</strong>: it supports both online and offline visualization. It builds on an original extension of the GraphView library (<a href="http://android-graphview.org/">http://android-graphview.org/</a>). The source code of the new version developed as part of the <em>mHealthDroid</em> project can be found at <a href="https://github.com/mHealthDroid/myGraphView">https://github.com/mHealthDroid/myGraphView</a>.</li>
+<li>
+<strong>Data Processing Manager</strong>: it is in charge of supervising and coordinating all the processes related to the inference of knowledge. This manager provides signal processing, data mining and machine learning techniques to extract knowledge from the biomedical data.</li>
+<li>
+<strong>System Manager</strong>: this is a miscellaneous manager which allows for the configuration and monitoring of instrinsic aspects of the mobile and external devices. More importantly, it comprises a set of tools to support guidelines, recommendations or alerts of worth in health applications.</li>
+</ul><h2>
+<a name="full-documentation" class="anchor" href="#full-documentation"><span class="octicon octicon-link"></span></a>Full documentation</h2>
+
+<p>The mHealthDroid full documentation can be found in <a href="http://apuestasrafag.files.wordpress.com/2014/02/full-documentation-thesis-rafael-garcia.pdf">Rafael's</a> and <a href="http://apuestasrafag.files.wordpress.com/2014/02/full-documentation-thesis-alejandro-saez.pdf">Alejandro's</a>  Master Thesis.</p>
+
+<h2>
+<a name="app-examples" class="anchor" href="#app-examples"><span class="octicon octicon-link"></span></a>APP examples</h2>
+
+<ul>
+<li>mHealthAPP: exemplary APP intended to show the usefulness and potential of mHealthDroid. More information in <a href="https://github.com/mHealthDroid/mHealthAPP">mHealthAPP </a>repository</li>
+</ul><p><a href="https://www.youtube.com/watch?v=AMdxw4osjCU"><img src="http://apuestasrafag.files.wordpress.com/2014/03/thumbnailvideo.png?w=673" height="300"></a></p>
+
+<h2>
+<a name="examples-how-to-use-mhealthdroid" class="anchor" href="#examples-how-to-use-mhealthdroid"><span class="octicon octicon-link"></span></a>Examples. How to use mHealthDroid</h2>
+
+<p>The aim of this section is to show basic examples of how to use each manager.</p>
+
+<h3>
+<a name="communication-manager" class="anchor" href="#communication-manager"><span class="octicon octicon-link"></span></a>Communication Manager</h3>
+
+<p>Every manager is singleton, which means it is necessary to get its instance like this:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">CommunicationManager</span> <span class="n">cm</span> <span class="o">=</span> <span class="n">CommunicationManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+</pre></div>
+
+<p>Then, if one wants to storage data into the database, the variable storage must be initialized this way:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">cm</span><span class="o">.</span><span class="na">CreateStorage</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">());</span>
+
+</pre></div>
+
+<p>To add devices to the manager, one just needs to call the appropriate functions:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">cm</span><span class="o">.</span><span class="na">AddDeviceShimmer</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="s">"Device Shimmer"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+<span class="n">cm</span><span class="o">.</span><span class="na">AddDeviceMobile</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="s">"Mobile Device"</span><span class="o">);</span>
+</pre></div>
+
+<p>Since the mobile device uses the device's sensor, it is not necessary to connect it. But
+for the Shimmer devices, once they have been added, they need to be connected. This
+work is done by the function <em>Connect</em>, giving as parameter the mac address:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">cm</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="s">"Device Shimmer"</span><span class="o">,</span> <span class="n">address</span><span class="o">);</span>
+</pre></div>
+
+<p>Before the device starts to stream, the enabled sensors of the devices can be set:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;</span> <span class="n">sensors</span> <span class="o">=</span> <span class="n">newArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;();</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">ACCELEROMETER</span><span class="o">);</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">MAGNETOMETER</span><span class="o">);</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">GYROSCOPE</span><span class="o">);</span>
+<span class="n">cm</span><span class="o">.</span><span class="na">writeEnabledSensors</span><span class="o">(</span><span class="s">"Mobile Device"</span><span class="o">,</span> <span class="n">sensors</span><span class="o">);</span>
+<span class="n">cm</span><span class="o">.</span><span class="na">writeEnabledSensors</span><span class="o">(</span><span class="s">"Device Shimmer"</span><span class="o">,</span> <span class="n">sensors</span><span class="o">);</span>
+</pre></div>
+
+<p>The number of samples to be stored in the buffer can be chosen too:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">cm</span><span class="o">.</span><span class="na">setNumberOfSampleToStorage</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+</pre></div>
+
+<p>After all these things are done, it is the suitable moment to start (and stop whenever
+is wanted) to stream:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">cm</span><span class="o">.</span><span class="na">startStreaming</span><span class="o">(</span><span class="s">"Mobile Device"</span><span class="o">);</span>
+<span class="n">cm</span><span class="o">.</span><span class="na">startStreaming</span><span class="o">(</span><span class="s">"Device Shimmer"</span><span class="o">);</span>
+<span class="n">cm</span><span class="o">.</span><span class="na">stopStreaming</span><span class="o">(</span><span class="s">"Mobile Device"</span><span class="o">);</span>
+<span class="n">cm</span><span class="o">.</span><span class="na">stopStreaming</span><span class="o">(</span><span class="s">"Device Shimmer"</span><span class="o">);</span>
+</pre></div>
+
+<p>There are a couple of features that can be set either before or during the data streaming
+such as to select what device is going to store its data (by default, it is set to true) or to set a label.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">cm</span><span class="o">.</span><span class="na">setStoreData</span><span class="o">(</span><span class="s">"Mobile Device"</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+<span class="n">cm</span><span class="o">.</span><span class="na">setStoreData</span><span class="o">(</span><span class="s">"device Shimmer"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+<span class="n">cm</span><span class="o">.</span><span class="na">setLabel</span><span class="o">(</span><span class="s">"walking"</span><span class="o">);</span>
+</pre></div>
+
+<p>There is a way to get the device in case it is wanted to access to its specific functionalities:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">DeviceShimmerdS</span> <span class="o">=</span> <span class="o">(</span><span class="n">DeviceShimmer</span><span class="o">)</span> <span class="n">cm</span><span class="o">.</span><span class="na">getDevice</span><span class="o">(</span><span class="s">"Device Shimmer"</span><span class="o">);</span>
+<span class="n">DeviceMobiledM</span> <span class="o">=</span> <span class="o">(</span><span class="n">DeviceMobile</span><span class="o">)</span> <span class="n">cm</span><span class="o">.</span><span class="na">getDevice</span><span class="o">(</span><span class="s">"Mobile Device"</span><span class="o">);</span>
+</pre></div>
+
+<p>To insert a new users profile there are a couple of things to consider. The database
+must be open and the table created. It is also possible to check whether the login
+already exists in order to avoid a SQL exception. Then the database should be closed.
+All of this is possible by doing:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">cm</span><span class="o">.</span><span class="na">openDatabase</span><span class="o">();</span>
+<span class="n">cm</span><span class="o">.</span><span class="na">createUsersTable</span><span class="o">();</span>
+<span class="k">if</span><span class="o">(!</span><span class="n">cm</span><span class="o">.</span><span class="na">existsLogin</span><span class="o">(</span><span class="n">login</span><span class="o">))</span>
+    <span class="n">cm</span><span class="o">.</span><span class="na">addUserProfile</span><span class="o">(</span><span class="n">login</span><span class="o">,</span> <span class="n">password</span><span class="o">,</span> <span class="n">age</span><span class="o">,</span> <span class="n">sex</span><span class="o">,</span> <span class="n">weight</span><span class="o">,</span> <span class="n">height</span><span class="o">,</span> <span class="n">email</span><span class="o">);</span>
+<span class="k">else</span>
+    <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="s">"this login already exists"</span><span class="o">,</span><span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+<span class="n">cm</span><span class="o">.</span><span class="na">closeDatabase</span><span class="o">();</span>
+</pre></div>
+
+<p>In case there are devices streaming, it is advisable to check whether any of them store
+data before closing the database. It should be done in order to avoid a SQL exception.
+To do that, it is only necessary to call the function of the Communication Manager
+named <em>isStoring()</em>:</p>
+
+<div class="highlight highlight-java"><pre><span class="k">if</span><span class="o">(!</span><span class="n">cm</span><span class="o">.</span><span class="na">isStoring</span><span class="o">())</span>
+    <span class="n">cm</span><span class="o">.</span><span class="na">closeDatabase</span><span class="o">();</span>
+</pre></div>
+
+<h3>
+<a name="remote-storage-manager" class="anchor" href="#remote-storage-manager"><span class="octicon octicon-link"></span></a>Remote Storage Manager</h3>
+
+<p>The way to use this module is quite simple. RemoteStorageManager is a singleton class (class instantiation restricted to one object), so to obtain a RemoteStorageManager instance is necessary to proceed as follows:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">ServerManager</span> <span class="n">sm</span> <span class="o">=</span> <span class="n">ServerManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+</pre></div>
+
+<p>It is also necessary to initialize the Storage variable belonging to the RemoteStorageManager class called storage. This is done by:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">sm</span><span class="o">.</span><span class="na">CreateStorage</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">());</span>
+</pre></div>
+
+<p>Then the server IP address is set by means of the function <em>setServerIP</em>. Also, it
+is compulsory to set the name and path (if necessary) of the scripts that will be executed in the server side. These scripts must be accessible from the server IP address.
+For example, using XAMPP like in this example the scripts inside the <em>Htdocs</em> can be
+accessible by the address <em>http://serverIP/scriptName</em>.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">sm</span><span class="o">.</span><span class="na">setServerIP</span><span class="o">(</span><span class="s">"http://192.168.1.11"</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">setMobileMetadataPath</span><span class="o">(</span><span class="s">"insert_mobile_metadata.php"</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">setMobileSignalsPath</span><span class="o">(</span><span class="s">"insert_mobile_signals.php"</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">setMobileUnitsPath</span><span class="o">(</span><span class="s">"insert_mobile_units.php"</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">setShimmerMetadataPath</span><span class="o">(</span><span class="s">"insert_shimmer_metadata.php"</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">setShimmerSignalsPath</span><span class="o">(</span><span class="s">"insert_shimmer_signals.php"</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">setShimmerUnitsPath</span><span class="o">(</span><span class="s">"insert_shimmer_units.php"</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">setLastIDPath</span><span class="o">(</span><span class="s">"get_last_ID.php"</span><span class="o">);</span>
+</pre></div>
+
+<p>If WiFi connection is used, WiFi must be enabled. The user can turn it on through
+the setWiFiEnabled function defined on the System Manager.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">sysm</span><span class="o">.</span><span class="na">setWifiEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">,</span> <span class="n">getApplicationContext</span><span class="o">());</span>
+</pre></div>
+
+<p>There are three functions for uploading, one for each database table: data, metadata
+or units. For example, the uploading of the the database tables for the mobile device
+("Mobile device") and the ones for a given wearable monitoring device ("device 1") is
+defined as follows:</p>
+
+<div class="highlight highlight-java"><pre><span class="c1">// To upload shimmer tables</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">uploadUnitsTable</span><span class="o">(</span><span class="s">"device 1"</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">uploadMetadataTable</span><span class="o">(</span><span class="s">"device 1"</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">uploadSignalsTable</span><span class="o">(</span><span class="s">"device 1"</span><span class="o">);</span>
+
+<span class="c1">// To upload mobile tables</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">uploadUnitsTable</span><span class="o">(</span><span class="s">"Mobile Device"</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">uploadMetadataTable</span><span class="o">(</span><span class="s">"Mobile Device"</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">uploadSignalsTable</span><span class="o">(</span><span class="s">"Mobile Device"</span><span class="o">);</span>
+</pre></div>
+
+<p>To know when the data are upload, it is needed to run within a thread the function
+isProcessFinished(). An example of how to do this follows:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">Handler</span> <span class="n">mHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Handler</span><span class="o">();</span>
+<span class="n">mHandler</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="n">isFinished</span><span class="o">);</span>
+<span class="n">Runnable</span> <span class="n">isFinished</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Runnable</span><span class="o">(){</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">rsm</span><span class="o">.</span><span class="na">isProcessFinished</span><span class="o">()){</span>
+            <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">getActivity</span><span class="o">(),</span> <span class="s">"Uploading completed"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+<span class="o">}</span>
+        <span class="k">else</span>
+            <span class="n">mHandler</span><span class="o">.</span><span class="na">postDelayed</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="mi">1000</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">};</span>
+
+</pre></div>
+
+<p>Once all the data are uploaded, the thread responsible for the uploading must be
+stopped, to save the waste of resources.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">sm</span><span class="o">.</span><span class="na">finishProcess</span><span class="o">();</span>
+</pre></div>
+
+<p>To finish, according to users preferences, the WiFi connection could be turn off.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">sysm</span><span class="o">.</span><span class="na">setWifiEnabled</span><span class="o">(</span><span class="kc">false</span><span class="o">,</span> <span class="n">getApplicationContext</span><span class="o">());</span>
+</pre></div>
+
+<p>To upload the local database, some PHP scripts are necessaries, provided along
+with the framework. It is just a simple implementation, different scripts could be used, but the framework user must be careful with the scripts name and the paths where these are located. By default, if the user does not change scripts names or paths, the files get <em>last ID.php, DB config.php, insert mobile metadata.php, insert mobile signals.php, insert mobile units.php, insert shimmer metadata.php, insert shimmer signals.php</em> and <em>insert shimmer units.php</em> must be located in a path where can be accessible by the address <em>http://serverIP/nameFile.php</em> (for example, in the directory Htdocs for XAMPP).</p>
+
+<p>Consequently, if the user wants to use different scripts or just for server reasons
+needs to change their path, it can be achieved by means of the following functions: <em>set-
+MobileUnitsPath(String path), setMobileSignalsPath(String path), setMobileMetadata-
+Path(String path), setShimmerUnitsPath(String path), setShimmerSignalsPath(String
+path), setShimmerMetadataPath(String path)</em> and <em>setLastIDPath(String path)</em>.</p>
+
+<h3>
+<a name="visualization-manager" class="anchor" href="#visualization-manager"><span class="octicon octicon-link"></span></a>Visualization Manager</h3>
+
+<p>Since it is a singleton class, first it is necessary to get the instance:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">VisualizationManager</span> <span class="n">vm</span> <span class="o">=</span> <span class="n">VisualizationManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+</pre></div>
+
+<p>Then, a graph must be created. A unique name to the graph and its type (Line or
+Bars) must be selected. The UI context must also be indicated.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">vm</span><span class="o">.</span><span class="na">addGraph</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="n">GraphType</span><span class="o">.</span><span class="na">LINE</span><span class="o">,</span> <span class="n">getApplicationContext</span><span class="o">());</span>
+</pre></div>
+
+<p>Now, it depends on the approach desired, either online or offline. Here, both of them
+are explained.</p>
+
+<ul>
+<li>
+<p>Offline</p>
+
+<p>To create a series, first it is necessary to create an array with the values of the Y
+coordinates. For this example, the Sine of a set of numbers will be used:                   </p>
+
+<div class="highlight highlight-java"><pre><span class="kt">float</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">float</span><span class="o">[</span><span class="mi">250</span><span class="o">];</span>
+<span class="kt">float</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">250</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="n">a</span> <span class="o">+=</span> <span class="mf">0.2</span><span class="o">;</span>
+    <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span> <span class="n">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>To introduce the data into the graph, the following procedure must be used:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">vm</span><span class="o">.</span><span class="na">addSerie</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="s">"Sin"</span><span class="o">,</span> <span class="n">array</span><span class="o">);</span>
+</pre></div>
+
+<p>or</p>
+
+<div class="highlight highlight-java"><pre><span class="n">vm</span><span class="o">.</span><span class="na">addSerie</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="s">"Sin"</span><span class="o">,</span> <span class="n">array</span><span class="o">,</span> <span class="n">Color</span><span class="o">.</span><span class="na">BLUE</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="s">"Sin from 0 to 250"</span><span class="o">);</span>
+</pre></div>
+
+<p>A series can be introduced with a description. To show it, one must activate the
+option. Its alignment in the graph can be set as well:</p>
+</li>
+</ul><div class="highlight highlight-java"><pre><span class="n">vm</span><span class="o">.</span><span class="na">setShowLegend</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+<span class="n">vm</span><span class="o">.</span><span class="na">setLegendAlign</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="n">LegendAlign</span><span class="o">.</span><span class="na">TOP</span><span class="o">);</span>
+</pre></div>
+
+<p>The graph must be included in a layout In order to be painted:</p>
+
+<pre><code>LinearLayout layout = (LinearLayout) findViewById(R.id.graph);
+vm.paint("graph", layout);
+</code></pre>
+
+<p>Horizontal and vertical labels are created automatically, but they can be set like
+this:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">String</span> <span class="o">[]</span> <span class="n">month</span> <span class="o">=</span> <span class="o">{</span><span class="s">"January"</span><span class="o">,</span> <span class="s">"February"</span><span class="o">,</span> <span class="s">"March"</span><span class="o">,</span> <span class="s">"April"</span><span class="o">,</span> <span class="s">"May"</span><span class="o">,</span>
+<span class="s">"June"</span><span class="o">,</span> <span class="s">"July"</span><span class="o">,</span> <span class="s">"August"</span><span class="o">,</span> <span class="s">"Sept."</span><span class="o">,</span> <span class="s">"Oct."</span><span class="o">,</span> <span class="s">"Nov."</span><span class="o">,</span> <span class="s">"Dec."</span><span class="o">};</span>
+<span class="n">vm</span><span class="o">.</span><span class="na">setHorizontalLabels</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="n">month</span><span class="o">);</span>
+<span class="n">vm</span><span class="o">.</span><span class="na">setVerticaltalLabels</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="n">month</span><span class="o">);</span>
+</pre></div>
+
+<ul>
+<li>
+<p>Online</p>
+
+<p>Like in the offine mode, it is necessary to add the graph into a layout:</p>
+</li>
+</ul><div class="highlight highlight-java"><pre><span class="n">LinearLayout</span> <span class="n">layoutOnline</span> <span class="o">=</span> <span class="o">(</span><span class="n">LinearLayout</span><span class="o">)</span>
+<span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">graphOnline</span><span class="o">);</span>
+<span class="n">vm</span><span class="o">.</span><span class="na">paint</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="n">layoutOnline</span><span class="o">);</span>
+</pre></div>
+
+<p>To visualize online data, it is necessary indicate the set of sensors desired:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;</span> <span class="n">sensors</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;();</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">ACCELEROMETER_X</span><span class="o">);</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">ACCELEROMETER_Y</span><span class="o">);</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">ACCELEROMETER_Z</span><span class="o">);</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">GYROSCOPE_X</span><span class="o">);</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">GYROSCOPE_Y</span><span class="o">);</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">GYROSCOPE_Z</span><span class="o">);</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">MAGNETOMETER_X</span><span class="o">);</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">MAGNETOMETER_Y</span><span class="o">);</span>
+<span class="n">sensors</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">MAGNETOMETER_Z</span><span class="o">);</span>
+</pre></div>
+
+<p>The <em>scrollable</em> feature of the graph MUST be activated. Otherwise online visualization
+will NOT work:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">vm</span><span class="o">.</span><span class="na">setScrollable</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+</pre></div>
+
+<p>Now it is the time to use the function, which does all the work, to visualize the
+data:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">vm</span><span class="o">.</span><span class="na">visualizationOnline</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="s">"nameDevice"</span><span class="o">,</span> <span class="n">sensors</span><span class="o">);</span>
+</pre></div>
+
+<p>To stop the visualization process, the following method may be used:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">vm</span><span class="o">.</span><span class="na">stopVisualizationOnline</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="s">"nameDevice"</span><span class="o">);</span>
+</pre></div>
+
+<p>There are some features that are advisable to set in order to get a better visualization
+in both modes:</p>
+
+<ul>
+<li>Make the graph scalable (advisable for offine mode):</li>
+</ul><div class="highlight highlight-java"><pre><span class="n">vm</span><span class="o">.</span><span class="na">setScalable</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+</pre></div>
+
+<ul>
+<li>Set the init and the viewport (advisable for online mode):</li>
+</ul><div class="highlight highlight-java"><pre><span class="n">vm</span><span class="o">.</span><span class="na">setViewPort</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">200</span><span class="o">);</span>
+</pre></div>
+
+<ul>
+<li>Set the values of the Y axis (advisable for both modes):</li>
+</ul><div class="highlight highlight-java"><pre><span class="n">vm</span><span class="o">.</span><span class="na">setManualYAxisBounds</span><span class="o">(</span><span class="s">"graph"</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="o">-</span><span class="mi">10</span><span class="o">);</span>
+</pre></div>
+
+<h3>
+<a name="system-manager" class="anchor" href="#system-manager"><span class="octicon octicon-link"></span></a>System Manager</h3>
+
+<p>System Manager is a singleton class. Thus, to obtain the unique instance that could
+exists in an application it is necessary to use the getInstance function.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">SystemManager</span> <span class="n">sm</span> <span class="o">=</span> <span class="n">SystemManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+</pre></div>
+
+<h4>
+<a name="services-and-setup" class="anchor" href="#services-and-setup"><span class="octicon octicon-link"></span></a>Services and Setup</h4>
+
+<p>Services and Setup modules are quite simple to use. To perform a mobile call or to
+send a text message it could be done like follows:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">sm</span><span class="o">.</span><span class="na">call</span><span class="o">(</span><span class="n">number</span><span class="o">,</span> <span class="n">activity</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">sendSMS</span><span class="o">(</span><span class="n">number</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
+</pre></div>
+
+<p>Where number parameter is the mobile number to call or send a message and
+message the text message to be sent.
+There are three kind of notifications which can be used as follow:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">sm</span><span class="o">.</span><span class="na">sendSimpleNotification</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">text</span><span class="o">,</span> <span class="n">notificationID</span><span class="o">,</span> <span class="n">icon</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
+<span class="n">PendingIntent</span> <span class="n">contentIntent</span> <span class="o">=</span>
+<span class="n">PendingIntent</span><span class="o">.</span><span class="na">getActivity</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="mi">0</span><span class="o">,</span> <span class="n">Intent</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">flags</span> <span class="o">=</span> <span class="n">Notification</span><span class="o">.</span><span class="na">FLAG_AUTO_CANCEL</span><span class="o">;</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">sendComplexNotification</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">text</span><span class="o">,</span> <span class="n">notificationId</span><span class="o">,</span> <span class="n">icon</span><span class="o">,</span> <span class="n">flags</span><span class="o">,</span>
+<span class="n">contentIntent</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
+<span class="n">Uri</span> <span class="n">soundUri</span> <span class="o">=</span>
+<span class="n">RingtoneManager</span><span class="o">.</span><span class="na">getDefaultUri</span><span class="o">(</span><span class="n">RingtoneManager</span><span class="o">.</span><span class="na">TYPE_NOTIFICATION</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">sendComplexNotificationCustomSound</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">text</span><span class="o">,</span> <span class="n">notificationId</span><span class="o">,</span> <span class="n">icon</span><span class="o">,</span>
+<span class="n">flags</span><span class="o">,</span> <span class="n">contentIntent</span><span class="o">,</span> <span class="n">soundUri</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
+</pre></div>
+
+<p>Where <em>title</em> parameter is the notification title, <em>text</em> the text to be shown, <em>notificationId</em> the notification ID, <em>icon</em> a notification icon and context the application UI
+context. For the last two notification type, <em>contentIntent</em> is the Intent which is run
+when the notifications are clicked on and flags parameters are the notifications 
+flags available for user usage.</p>
+
+<p><em>NOTE. The minimum Android SDK Version required is 10th so some flags belonging
+to newer Android SDK versions may do not work properly.</em></p>
+
+<p>These same notifications may be scheduled. It is necessary to declare in the Android
+Manifest the class ScheduledTask as a receiver.</p>
+
+<div class="highlight highlight-java"><pre><span class="o">&lt;</span><span class="n">receiver</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"systemManager.services.ScheduledTask"</span><span class="o">/&gt;</span>
+</pre></div>
+
+<pre><code>sm.scheduledSimpleNotification(title, text, notificationID, icon, context,
+date);
+sm.scheduledComplexNotification(title, text, notificationId, icon, flags,
+contentIntent, context, date);
+sm.scheduledComplexNotificationCustomSound(title, text, notificationId, icon,
+flags, contentIntent, soundUri, context, date);
+</code></pre>
+
+<p>All parameters play the same role than explained previously except <em>Date</em>. It is a
+Calendar type which indicates when the notification is scheduled. It is also possible to
+schedule an audio to be reroduced by this:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">sm</span><span class="o">.</span><span class="na">scheduledAudio</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">context</span><span class="o">,</span> <span class="n">date</span><span class="o">);</span>
+</pre></div>
+
+<p>Where <em>path</em> is the files path, <em>context</em> is the application UI context and <em>date</em> is a
+Calendar type indicating when the audio is scheduled to be reproduced.</p>
+
+<p>To turn on/off Wi-Fi or Bluetooth:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">sm</span><span class="o">.</span><span class="na">setWifiEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
+<span class="n">sm</span><span class="o">.</span><span class="na">setBluetooth</span><span class="o">(</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">);</span>
+</pre></div>
+
+<p>The first boolean parameter set the Wi-Fi/Bluetooth state and <em>context</em> is the application
+UI context. Finally, the screen brightness could be adjust as follows:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">sm</span><span class="o">.</span><span class="na">setScreenBrightness</span><span class="o">(</span><span class="n">brightness</span><span class="o">,</span> <span class="n">activity</span><span class="o">)</span>
+</pre></div>
+
+<p>The parameter of <em>brightness</em> is a float number between 0 and 1 (from dark to
+bright). It is also possible to set it to less than 0, which means that the user default
+screen brightness is used.</p>
+
+<h4>
+<a name="guidelines" class="anchor" href="#guidelines"><span class="octicon octicon-link"></span></a>Guidelines</h4>
+
+<p>The manner of using any of the guidelines modules is slightly different. First, it is
+necessary to obtain an instance of the class which will be used and once this is done,
+just use its functions.</p>
+
+<h5>
+<a name="youtube" class="anchor" href="#youtube"><span class="octicon octicon-link"></span></a>YouTube</h5>
+
+<p>To build the YouTube module has been necessary the YouTube Android Player API. To employ this API is compulsory to provide at least a <em>YoutubePlayerView</em>. The class where this functionality is developed must extends the <em>YouTubeBaseActivity</em> and implements <em>YouTubePlayer.OnInitializedListener</em>.</p>
+
+<p>An example of how to use the YouTube Guideline module is shown next:</p>
+
+<p>At least the following fields need to be declared as class fields.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">YouTubePlayerView</span> <span class="n">youTubePlayerView</span><span class="o">;</span> 
+<span class="n">YouTubePlayer</span> <span class="n">player</span><span class="o">;</span>
+<span class="n">ListView</span> <span class="n">videosListView</span><span class="o">;</span>
+<span class="n">Youtube</span> <span class="n">youtube</span><span class="o">;</span>
+</pre></div>
+
+<p>Declaration and initialization:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">youtube_layout</span><span class="o">);</span>
+<span class="n">player</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span class="n">YouTubePlayerView</span> <span class="n">youtubePlayerView</span> <span class="o">=</span>
+<span class="o">(</span><span class="n">YouTubePlayerView</span><span class="o">)</span><span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">youtube_view</span><span class="o">);</span>
+<span class="n">youtubePlayerView</span><span class="o">.</span><span class="na">initialize</span><span class="o">(</span><span class="n">KEY_DEVELOPER</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
+<span class="n">sm</span> <span class="o">=</span> <span class="n">SystemManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+<span class="n">youtube</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="na">getYoutubePlayer</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">youtubePlayerView</span><span class="o">);</span>
+</pre></div>
+
+<p>The developer key is a variable that identifies the YouTube developer submitting
+an API request. In the case when only playing a YouTube video is wanted, it could be
+done by:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">youtube</span><span class="o">.</span><span class="na">reproduceSingleVideoMode</span><span class="o">(</span><span class="n">URL</span><span class="o">);</span>
+</pre></div>
+
+<p>The <em>URL</em> parameter is the YouTube video URL to be reproduced, that consists of
+the last part of the video link.</p>
+
+<p>It is also possible to reproduce YouTube playlist videos, selecting the video to be
+reproduced using a <em>listView</em> view. In order to do this, it is necessary to have in the
+current layout a <em>listView</em> view.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">ListView</span> <span class="n">videosListView</span> <span class="o">=</span> <span class="o">(</span><span class="n">ListView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">listListView</span><span class="o">);</span>
+<span class="n">youtube</span><span class="o">.</span><span class="na">reproducePlaylistMode</span><span class="o">(</span><span class="n">videosListView</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">entry</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">textViewSuperior</span><span class="o">,</span> 
+<span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">textViewInferior</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">imageViewImage</span><span class="o">,</span> <span class="n">playlistID</span><span class="o">);</span>
+</pre></div>
+
+<p>The parameter <em>entry</em> is a layout with every entry format of the <em>listview</em>. <em>TextViewSuperior</em>, <em>TextViewInferior</em> and <em>imageViewImage</em> are fields with the title, description and thumbnail of a YouTube video. <em>PlaylistID</em> is the ID of a list of YouTube videos. </p>
+
+<p>It is also necessary to implement two abstract methods belonging to <em>YouTubePlayer.OnInitializedListener</em>.</p>
+
+<div class="highlight highlight-java"><pre><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onInitializationFailure</span><span class="o">(</span><span class="n">Provider</span> <span class="n">arg0</span><span class="o">,</span> <span class="n">YouTubeInitializationResult</span> <span class="n">arg1</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"Oh dear, something terrible happened, sorry!"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>        
+<span class="o">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onInitializationSuccess</span><span class="o">(</span><span class="n">Provider</span> <span class="n">provider</span><span class="o">,</span> <span class="n">YouTubePlayer</span> <span class="n">playa</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">wasRestored</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="k">this</span><span class="o">.</span><span class="na">player</span> <span class="o">=</span> <span class="n">playa</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">player</span><span class="o">.</span><span class="na">setPlayerStyle</span><span class="o">(</span><span class="n">YouTubePlayer</span><span class="o">.</span><span class="na">PlayerStyle</span><span class="o">.</span><span class="na">MINIMAL</span><span class="o">);</span>      
+    <span class="c1">//Now that the player is initialized, we need to set it on our Youtube class</span>
+    <span class="n">youtube</span><span class="o">.</span><span class="na">setPlayer</span><span class="o">(</span><span class="n">player</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+
+<h5>
+<a name="audio" class="anchor" href="#audio"><span class="octicon octicon-link"></span></a>Audio</h5>
+
+<p>The Audio module has been developed using the Media Player Android API.
+To utilize this module, the first thing to do is to obtain an instance of the Audio class.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">Audio</span> <span class="n">audioPlayer</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="na">getAudioPlayer</span><span class="o">();</span>
+</pre></div>
+
+<p>Now, to play a stored audio file in the mobile phone, this must be done:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="na">getExternalStorageDirectory</span><span class="o">()</span> <span class="o">+</span> <span class="s">"/"</span> <span class="o">+</span> <span class="s">"song.mp3"</span><span class="o">;</span>
+<span class="n">audioPlayer</span><span class="o">.</span><span class="na">loadFile</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+<span class="n">audioPlayer</span><span class="o">.</span><span class="na">prepare</span><span class="o">();</span>
+<span class="n">audioPlayer</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
+</pre></div>
+
+<p>More functions are available, such as <em>pause</em>, <em>resume</em>, <em>getDuration</em>, etc. However,
+every function of the MediaPlayer API may be used.</p>
+
+<h5>
+<a name="video" class="anchor" href="#video"><span class="octicon octicon-link"></span></a>Video</h5>
+
+<p>The Video module is based on the functionality provides by the <em>VideoView</em> view. To reproduce a video which is stored in the mobile external card, the following
+should be done:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">video_layout</span><span class="o">);</span>
+<span class="n">VideoViewvideoHolder</span> <span class="o">=</span> <span class="o">(</span><span class="n">VideoView</span><span class="o">)</span><span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">videoView</span><span class="o">);</span>
+<span class="n">Video</span> <span class="n">video</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="na">getVideoPlayer</span><span class="o">(</span><span class="n">videoHolder</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="n">Enviroment</span><span class="o">.</span><span class="na">getExternalStorageDirectory</span><span class="o">()</span> <span class="o">+</span> <span class="s">"/"</span> <span class="o">+</span> <span class="s">"video.mp4"</span><span class="o">;</span>
+<span class="n">video</span><span class="o">.</span><span class="na">setVideoPath</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+<span class="n">video</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
+</pre></div>
+
+<p>More functions are available, such as pause or resume. Every function of the
+<em>VideoView</em> class may be used.</p>
+
+<h3>
+<a name="data-processing-manager" class="anchor" href="#data-processing-manager"><span class="octicon octicon-link"></span></a>Data Processing Manager</h3>
+
+<p>Since it is a singleton class, first it is necessary to get the unique instance.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">DataProcessingManager</span> <span class="n">dpm</span> <span class="o">=</span> <span class="n">DataProcessingManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+</pre></div>
+
+<p>It is also necessary to initialize and set (for the acquisition module) the Storage
+variable belonging to the RemoteStorageManager class called storage. This is done by:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">createAndSetStorage</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">());</span>
+</pre></div>
+
+<p>Now it proceeds depending on the inference knowledge approach desired: online or
+offine.</p>
+
+<h4>
+<a name="offline" class="anchor" href="#offline"><span class="octicon octicon-link"></span></a>Offline</h4>
+
+<h5>
+<a name="acquisition" class="anchor" href="#acquisition"><span class="octicon octicon-link"></span></a>Acquisition</h5>
+
+<p>To show how the data acquisition is done, some devices and sensors where data
+are retrieved must be selected. For example, it is shown how to acquire the signals
+accelerometer X, accelerometer Y, accelerometer Z and timestamp of a given wearable
+device called "Shimmer Chest" and the gyroscope X, gyroscope Y, gyroscope Z,
+humidity and timestamp of a portable mobile device called "Mobile Device".</p>
+
+<div class="highlight highlight-java"><pre><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;,</span> <span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">sensorsAndDevices</span> <span class="o">=</span> <span class="k">new</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;,</span> <span class="n">String</span><span class="o">&gt;&gt;();</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;</span> <span class="n">sensors1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;();</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;</span> <span class="n">sensors2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;();</span>
+<span class="n">sensors1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">ACCELEROMETER_X</span><span class="o">);</span>
+<span class="n">sensors1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">ACCELEROMETER_Y</span><span class="o">);</span>
+<span class="n">sensors1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">ACCELEROMETER_Z</span><span class="o">);</span>
+<span class="n">sensors1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">TIMESTAMP</span><span class="o">);</span>
+<span class="n">sensors2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">GYROSCOPE_X</span><span class="o">);</span>
+<span class="n">sensors2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">GYROSCOPE_Y</span><span class="o">);</span>
+<span class="n">sensors2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">GYROSCOPE_Z</span><span class="o">);</span>
+<span class="n">sensors2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">HUMIDITY</span><span class="o">);</span>
+<span class="n">sensors2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">SensorType</span><span class="o">.</span><span class="na">TIMESTAMP</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">nameDevice1</span> <span class="o">=</span> <span class="s">"Shimmer CHEST"</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">nameDevice2</span> <span class="o">=</span> <span class="s">"Mobile Device"</span><span class="o">;</span>
+<span class="n">Pair</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">pair1</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Pair</span><span class="o">(</span><span class="n">sensors1</span><span class="o">,</span> <span class="n">nameDevice1</span><span class="o">);</span>
+<span class="n">Pair</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SensorType</span><span class="o">&gt;,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">pair2</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Pair</span><span class="o">(</span><span class="n">sensors2</span><span class="o">,</span> <span class="n">nameDevice2</span><span class="o">);</span>
+<span class="n">sensorsAndDevices</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pair1</span><span class="o">);</span>
+<span class="n">sensorsAndDevices</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pair2</span><span class="o">);</span>
+</pre></div>
+
+<p>Now that <em>sensorsAndDevices</em> is ready, any Acquisition function may be used. To
+acquire all the selected data in the IDs range 100-500:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">retrieveInformationByID</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">500</span><span class="o">,</span> <span class="n">sensorsAndDevices</span><span class="o">);</span>
+</pre></div>
+
+<p>To retrieve data belonging to the first existing session:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">retrieveBySession</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">sensorsAndDevices</span><span class="o">);</span>
+</pre></div>
+
+<p>To retrieve data belonging to the first, second and third session:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">retrieveInformationByIntervalSessions</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="n">sensorsAndDevices</span><span class="o">);</span>
+</pre></div>
+
+<p>To retrieve the last 20 seconds of available data in the local database:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">retrieveInformationLastSeconds</span><span class="o">(</span><span class="mi">20</span><span class="o">,</span> <span class="n">sensorsAndDevices</span><span class="o">);</span>
+</pre></div>
+
+<p>Retrieving data using dates is slightly more complicated. An example of retrieving
+all the data streamed from the day 24th January 2014 at 22:00:00 hour to the day 25th
+January 2014 at 16:00:00 follows. It is important to keep in mind that month value
+goes in the interval [0-11]</p>
+
+<div class="highlight highlight-java"><pre><span class="n">Time</span> <span class="n">start</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Time</span><span class="o">();</span>
+<span class="n">start</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">22</span><span class="o">;</span>
+<span class="n">start</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="n">start</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="n">start</span><span class="o">.</span><span class="na">year</span> <span class="o">=</span> <span class="mi">2014</span><span class="o">;</span>
+<span class="n">start</span><span class="o">.</span><span class="na">month</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="n">start</span><span class="o">.</span><span class="na">monthDay</span> <span class="o">=</span> <span class="mi">24</span><span class="o">;</span>
+<span class="n">Time</span> <span class="n">end</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Time</span><span class="o">();</span>
+<span class="n">end</span><span class="o">.</span><span class="na">hour</span> <span class="o">=</span> <span class="mi">16</span><span class="o">;</span>
+<span class="n">end</span><span class="o">.</span><span class="na">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="n">end</span><span class="o">.</span><span class="na">second</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="n">end</span><span class="o">.</span><span class="na">year</span> <span class="o">=</span> <span class="mi">2014</span><span class="o">;</span>
+<span class="n">end</span><span class="o">.</span><span class="na">month</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="n">end</span><span class="o">.</span><span class="na">monthDay</span> <span class="o">=</span> <span class="mi">25</span><span class="o">;</span>
+<span class="n">dpm</span><span class="o">.</span><span class="na">retrieveInformationByDates</span><span class="o">(</span><span class="n">start</span><span class="o">,</span> <span class="n">end</span><span class="o">,</span> <span class="n">sensorsAndDevices</span><span class="o">);</span>
+</pre></div>
+
+<p>To retrieve all the information available:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">retrieveAllInformation</span><span class="o">(</span><span class="n">sensorsAndDevices</span><span class="o">);</span>
+</pre></div>
+
+<h5>
+<a name="pre-processing" class="anchor" href="#pre-processing"><span class="octicon octicon-link"></span></a>Pre-Processing</h5>
+
+<p>From this point, it is assumed that the data has been already acquired and stored
+in the hash variable (which is defined in this manager). Thus, to calculate either the
+<em>Upsampling</em> or the <em>Downsampling</em>, one just needs to do the following:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">downSampling</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">dpm</span><span class="o">.</span><span class="na">upSampling</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+</pre></div>
+
+<p>The result will be stored into the <em>hashProcessed</em> variable, which is defined in this
+manager.</p>
+
+<h5>
+<a name="segmentation" class="anchor" href="#segmentation"><span class="octicon octicon-link"></span></a>Segmentation</h5>
+
+<p>To make the segmentation, first it is necessary to get the devices' sample rate. For
+this example, an array with false sample rates is created:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Float</span><span class="o">&gt;</span> <span class="n">rates</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Float</span><span class="o">&gt;();</span>
+<span class="n">rates</span><span class="o">.</span><span class="na">add</span><span class="o">((</span><span class="kt">float</span><span class="o">)</span> <span class="mf">50.0</span><span class="o">);</span>
+<span class="n">rates</span><span class="o">.</span><span class="na">add</span><span class="o">((</span><span class="kt">float</span><span class="o">)</span> <span class="mf">50.0</span><span class="o">);</span>
+<span class="n">rates</span><span class="o">.</span><span class="na">add</span><span class="o">((</span><span class="kt">float</span><span class="o">)</span> <span class="mf">50.0</span><span class="o">);</span>
+</pre></div>
+
+<p>Then, the windowing no overlap can be calculated as follow:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">windowing_NoOverlap</span><span class="o">(</span><span class="n">DataType</span><span class="o">.</span><span class="na">Raw</span><span class="o">,</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span> <span class="mi">2</span><span class="o">,</span> <span class="n">rates</span><span class="o">);</span>
+<span class="n">and</span> <span class="n">the</span> <span class="n">windowing</span> <span class="n">overlap</span> <span class="n">as</span> <span class="nl">follow:</span>
+<span class="n">dpm</span><span class="o">.</span><span class="na">windowing_overlap</span><span class="o">(</span><span class="n">DataType</span><span class="o">.</span><span class="na">Raw</span><span class="o">,</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span> <span class="mf">2.5</span><span class="o">,</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span> <span class="mf">0.5</span><span class="o">,</span> <span class="n">rates</span><span class="o">);</span>
+</pre></div>
+
+<h5>
+<a name="features-extraction" class="anchor" href="#features-extraction"><span class="octicon octicon-link"></span></a>Features Extraction</h5>
+
+<p>The features must be defined in order to make the features extraction. These are
+some features definitions:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">addFeature</span><span class="o">(</span><span class="s">"Device Shimmer 1"</span><span class="o">,</span> <span class="n">SensorType</span><span class="o">.</span><span class="na">ACCELEROMETER_X</span><span class="o">,</span>
+<span class="n">FeatureType</span><span class="o">.</span><span class="na">MAXIMUM</span><span class="o">);</span>
+<span class="n">dpm</span><span class="o">.</span><span class="na">addFeature</span><span class="o">(</span><span class="s">"Device Shimmer 2"</span><span class="o">,</span> <span class="n">SensorType</span><span class="o">.</span><span class="na">ACCELEROMETER_Y</span><span class="o">,</span>
+<span class="n">FeatureType</span><span class="o">.</span><span class="na">MINIMUM</span><span class="o">);</span>
+<span class="n">dpm</span><span class="o">.</span><span class="na">addFeature</span><span class="o">(</span><span class="s">"Device Mobile"</span><span class="o">,</span> <span class="n">SensorType</span><span class="o">.</span><span class="na">ACCELEROMETER_Z</span><span class="o">,</span>
+<span class="n">FeatureType</span><span class="o">.</span><span class="na">VARIANCE</span><span class="o">);</span>
+<span class="n">dpm</span><span class="o">.</span><span class="na">addFeature</span><span class="o">(</span><span class="s">"Device Shimmer 1"</span><span class="o">,</span> <span class="n">SensorType</span><span class="o">.</span><span class="na">GYROSCOPE_Y</span><span class="o">,</span>
+<span class="n">FeatureType</span><span class="o">.</span><span class="na">STANDARD_DEVIATION</span><span class="o">);</span>
+<span class="n">dpm</span><span class="o">.</span><span class="na">addFeature</span><span class="o">(</span><span class="s">"Device Shimmer 2"</span><span class="o">,</span> <span class="n">SensorType</span><span class="o">.</span><span class="na">MAGNETOMETER_X</span><span class="o">,</span>
+<span class="n">FeatureType</span><span class="o">.</span><span class="na">ZERO_CROSSING_RATE</span><span class="o">);</span>
+<span class="n">dpm</span><span class="o">.</span><span class="na">addFeature</span><span class="o">(</span><span class="s">"Device Mobile"</span><span class="o">,</span> <span class="n">SensorType</span><span class="o">.</span><span class="na">MAGNETOMETER_Z</span><span class="o">,</span>
+<span class="n">FeatureType</span><span class="o">.</span><span class="na">MEAN_CROSSING_RATE</span><span class="o">);</span>
+</pre></div>
+
+<p>Owing to the previous steps, the features extraction can be done from different data:</p>
+
+<ul>
+<li>From not processed data and not segmented:</li>
+</ul><div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">feature_extraction</span><span class="o">(</span><span class="n">DataType</span><span class="o">.</span><span class="na">Raw</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+</pre></div>
+
+<ul>
+<li>From processed data and not segmented:</li>
+</ul><div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">feature_extraction</span><span class="o">(</span><span class="n">DataType</span><span class="o">.</span><span class="na">Processed</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+</pre></div>
+
+<ul>
+<li>From not processed data and segmented:</li>
+</ul><div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">feature_extraction</span><span class="o">(</span><span class="n">DataType</span><span class="o">.</span><span class="na">Raw</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+</pre></div>
+
+<ul>
+<li>From processed and segmented data, using the uncompleted windows:</li>
+</ul><div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">feature_extraction</span><span class="o">(</span><span class="n">DataType</span><span class="o">.</span><span class="na">Processed</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+</pre></div>
+
+<h5>
+<a name="classification" class="anchor" href="#classification"><span class="octicon octicon-link"></span></a>Classification</h5>
+
+<p>The way to use the Classification module does not change depending on the selected
+approach (offine or online). The first thing to do is to read a Weka file (arff format).</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">readFile</span><span class="o">(</span><span class="n">Environment</span><span class="o">.</span><span class="na">getExternalStorageDirectory</span><span class="o">(),</span> <span class="s">"example.arff"</span><span class="o">);</span>
+</pre></div>
+
+<p>Now, test or training instances may be set. Also a summary of both train instances
+may be obtained.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">setTrainInstances</span><span class="o">();</span>
+<span class="n">dpm</span><span class="o">.</span><span class="na">setTestInstances</span><span class="o">();</span>
+<span class="n">String</span> <span class="n">TrainSummary</span> <span class="o">=</span> <span class="n">dpm</span><span class="o">.</span><span class="na">getTrainInstancesSummary</span><span class="o">();</span>
+</pre></div>
+
+<p>A model may be built with the <em>trainClassifier</em> function. The first parameter is the
+class attribute and usually is the last attribute. The second parameter is the classifier
+type to be used, in this case J48 (Decision Tree). The <em>getAttributes</em> function returns a
+list of the existing Attributes.</p>
+
+<div class="highlight highlight-java"><pre><span class="kt">int</span> <span class="n">numAttributes</span> <span class="o">=</span> <span class="n">classification</span><span class="o">.</span><span class="na">getAttributes</span><span class="o">().</span><span class="na">size</span><span class="o">();</span>
+<span class="n">dpm</span><span class="o">.</span><span class="na">trainClassifier</span><span class="o">(</span><span class="n">numAttributes</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">classifierType</span><span class="o">.</span><span class="na">J48</span><span class="o">);</span>
+</pre></div>
+
+<p>The model may be directly loaded as well using the <em>loadModel</em> method:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">loadModel</span><span class="o">(</span><span class="n">classifier</span><span class="o">);</span>
+</pre></div>
+
+<p>Now that the model has been built, this can be evaluated by the method <em>testClassifier</em>. A summary about the evaluation may be obtained by <em>getTestSummary</em> method.
+The confusion matrix is obtained using the <em>getTestConfusionMatrix</em> function.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">testClassifier</span><span class="o">();</span>
+<span class="n">String</span> <span class="n">summaryEvaluation</span> <span class="o">=</span> <span class="n">dpm</span><span class="o">.</span><span class="na">getTestSummary</span><span class="o">();</span>
+<span class="n">String</span> <span class="n">confusionMatrix</span> <span class="o">=</span> <span class="n">dpm</span><span class="o">.</span><span class="na">getConfusionMatrix</span><span class="o">();</span>
+</pre></div>
+
+<p>To convert features vector or features matrix coming from the Feature Extracture
+stage into Instances Weka objects, the methods <em>featureVectorToInstances</em> and <em>featureMatrixToInstances</em> are available.</p>
+
+<div class="highlight highlight-java"><pre><span class="n">Instances</span> <span class="n">instances</span> <span class="o">=</span> <span class="n">dpm</span><span class="o">.</span><span class="na">featureVectorToInstances</span><span class="o">(</span><span class="n">featureVector</span><span class="o">);</span>
+<span class="n">Instances</span> <span class="n">instances</span> <span class="o">=</span> <span class="n">dpm</span><span class="o">.</span><span class="na">featureMatrixToInstances</span><span class="o">(</span><span class="n">featureMatrix</span><span class="o">);</span>
+</pre></div>
+
+<p>To clasify and unlabeled instance, there are two functions available: <em>classifyInstanceToDouble</em> and <em>classifyInstanceToString</em>. For example, to classify the first instance of an Instances object called instances:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">String</span> <span class="n">label</span> <span class="o">=</span> <span class="n">dpm</span><span class="o">.</span><span class="na">classifyInstanceToString</span><span class="o">(</span><span class="n">instances</span><span class="o">.</span><span class="na">firstInstance</span><span class="o">());</span>
+<span class="n">Double</span> <span class="n">label</span> <span class="o">=</span> <span class="n">dpm</span><span class="o">.</span><span class="na">classifyInstanceToDouble</span><span class="o">(</span><span class="n">instances</span><span class="o">.</span><span class="na">firstInstance</span><span class="o">());</span>
+</pre></div>
+
+<h4>
+<a name="online" class="anchor" href="#online"><span class="octicon octicon-link"></span></a>Online</h4>
+
+<h5>
+<a name="acquisition-and-segmentation" class="anchor" href="#acquisition-and-segmentation"><span class="octicon octicon-link"></span></a>Acquisition and Segmentation</h5>
+
+<p>These modules are not used in the online inference knowledge process, due to that
+the Communication Manager is the one which provides the data through windows with
+a determinate size.</p>
+
+<h5>
+<a name="pre-processing-feature-extraction-and-classification" class="anchor" href="#pre-processing-feature-extraction-and-classification"><span class="octicon octicon-link"></span></a>Pre-Processing, Feature Extraction, and Classification</h5>
+
+<p>To make the online knowledge inference, it is necessary to define the features to
+be extracted. The classification model and the class attribute must be defined as well.
+The previous section, Offine knowledge inference, shows how to do it.
+In order to execute the knowledge inference as a sequence, all the steps are defined under one function:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">inferenceOnline</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">sensorsAndDevices</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+</pre></div>
+
+<p>The last parameter indicates which kind the class attribute is (and in consequence the
+value returned): String or Double. In case the last parameter is 0, the returned value
+will be a String and will be stored in the <em>stringClassified variable</em> (which is defuned in this manager). In case the last parameter is 1 (like in the example), the returned value will be Double and will be stored in the <em>doubleClassified</em> variable (which is also defined in this manager).</p>
+
+<p>There is also another function for the online knowledge inference:</p>
+
+<div class="highlight highlight-java"><pre><span class="n">dpm</span><span class="o">.</span><span class="na">inferenceOnline</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">sensorsAndDevices</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">mHandler</span><span class="o">);</span>
+</pre></div>
+
+<h2>
+<a name="contribution-guidelines" class="anchor" href="#contribution-guidelines"><span class="octicon octicon-link"></span></a>Contribution guidelines</h2>
+
+<p>How can you help mHealthDroid to be a more completed tool? Here we propose you some ideas!</p>
+
+<ul>
+<li><p>Adding new biomedical devices drivers would be awesome! The possibility of using more and more biomedical devices makes mHealthDroid a tool more accesible for everybody!</p></li>
+<li><p>To improve the data visualization including more functionalities. Representing online visualization for different devices in the same graph would be cool!</p></li>
+<li><p>Extending the pre-processing module of the Data Processing Manager by adding more methods (downsampling and upsampling are already provided).</p></li>
+<li><p>Extending the features extraction module of the Data Processing Manager by adding new features (mean, variance, standard deviation, zero crossing rate, mean crossing rate, maximum and minimum already provided).</p></li>
+<li><p>To extend the funcionalities for the remote storage, making possible the data transference in both ways. ¿Cloud services for high performance computacion?</p></li>
+<li><p>To extend the guidelines functionalities. For example, Audio and Video modules encapsulates the basic functionalities of the Android Media Player API and the VideoView Android class. Adding extra functionalities would help to a more complete experience.</p></li>
+<li><p>To add more functionalities to manage the mobile aspects.</p></li>
+<li><p>To update notifications to the new ones provided by the last Android versions. Notifications implementation to this day, uses the functions provided for the Android SDK Version 10.</p></li>
+</ul><p>More contribution ideas will be added soon.</p>
+
+<h2>
+<a name="community" class="anchor" href="#community"><span class="octicon octicon-link"></span></a>Community</h2>
+
+<p>How can you keep track of the development and news of mHealthDroid? Follow us in our <a href="https://twitter.com/mhealthdroid">twitter</a></p>
+
+<h2>
+<a name="team-members" class="anchor" href="#team-members"><span class="octicon octicon-link"></span></a>Team Members</h2>
+
+<h3>
+<a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>Authors</h3>
+
+<p>Rafael García</p>
+
+<ul>
+<li><a href="http://github.com/rafagf">http://github.com/rafagf</a></li>
+<li>Email: <a href="mailto:rafagarfer@gmail.com">rafagarfer@gmail.com</a> </li>
+</ul><p>Alejandro Sáez</p>
+
+<ul>
+<li><a href="http://github.com/alsafer">http://github.com/alsafer</a></li>
+<li>Email: <a href="mailto:alejandrosaez3@gmail.com">alejandrosaez3@gmail.com</a>
+</li>
+</ul><h3>
+<a name="original-idea-and-project-coordinator" class="anchor" href="#original-idea-and-project-coordinator"><span class="octicon octicon-link"></span></a>Original Idea and Project Coordinator</h3>
+
+<p>Dr. Oresti Baños</p>
+
+<ul>
+<li><em>Research Center for Information and Communication Technology University of Granada (CITIC-UGR)</em></li>
+<li>Email: <a href="mailto:oresti.bl@gmail.com">oresti.bl@gmail.com</a>
+</li>
+</ul><h3>
+<a name="collaborators" class="anchor" href="#collaborators"><span class="octicon octicon-link"></span></a>Collaborators</h3>
+
+<p>Prof. Juan Antonio Holgado</p>
+
+<ul>
+<li><em>University of Granada (UGR)</em></li>
+<li>Email: <a href="mailto:jholgado@ugr.es">jholgado@ugr.es</a>
+</li>
+</ul><h2>
+<a name="where-can-i-get-help" class="anchor" href="#where-can-i-get-help"><span class="octicon octicon-link"></span></a>Where can I get help?</h2>
+
+<p>You can get any help you need getting in contact with any of the authors. We are looking forward to help you!</p>
+
+<h2>
+<a name="inspiration-and-motivation" class="anchor" href="#inspiration-and-motivation"><span class="octicon octicon-link"></span></a>Inspiration and motivation</h2>
+
+<p>This project is an original idea. The project was initiated and developed as part of the MsC thesis (Computer Science) of the authors at University of Granada (UGR) . </p>
+
+<p>After evaluation of the state-of-the-art in mobile health we ended up with the conclusion that there exist multiple wearable health devices (most of which are becoming commercial), biomedical apps and also biomedical and mobile frameworks. However, no biomedical mobile framework exists in a broad sense to the best of our knowledge. Although there are some frameworks devised for particular clinical problems, they mainly support data acquisition, visualization and broadcasting. Powerful health applications should incorporate these features plus many others such as local and remote storage, guidelines, recommenders notifications or knowledge inference among others, and not be limited to a particular biomedical device.</p>
+
+<h2>
+<a name="copyright-and-license" class="anchor" href="#copyright-and-license"><span class="octicon octicon-link"></span></a>Copyright and license</h2>
+
+<p>Project released under the license GPL V.3.</p>
+        </section>
+
+        <aside id="sidebar">
+
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
